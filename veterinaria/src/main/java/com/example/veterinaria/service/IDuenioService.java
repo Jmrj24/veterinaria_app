@@ -20,5 +20,5 @@ public interface IDuenioService {
     //Editar un dueño
     public void editDuenio(Duenio due);
 
-    public MascoDueDTO mascoDueDTO(Long idDuenio);
+    public List<MascoDueDTO> listaMascoDueDTO();
 }

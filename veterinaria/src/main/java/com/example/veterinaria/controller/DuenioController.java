@@ -48,7 +48,7 @@ public class DuenioController {
 
     // DTO datos conjuntos de mascota y dueño
     @GetMapping("/duenio/mascota")
-    public MascoDueDTO mascoDueDTO(@RequestParam(name="id") Long idDuenio) {
-        return dueServi.mascoDueDTO(idDuenio);
+    public List<MascoDueDTO> listaMascoDueDTO() {
+        return dueServi.listaMascoDueDTO();
     }
 }

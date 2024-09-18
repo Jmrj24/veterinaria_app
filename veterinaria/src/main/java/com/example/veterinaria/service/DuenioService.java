@@ -3,6 +3,8 @@ package com.example.veterinaria.service;
 import com.example.veterinaria.dto.MascoDueDTO;
 import com.example.veterinaria.model.Duenio;
 import com.example.veterinaria.repository.IDuenioRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,15 +40,21 @@ public class DuenioService implements IDuenioService {
     }
 
     @Override
-    public MascoDueDTO mascoDueDTO(Long idDuenio) {
-        Duenio due = this.findDuenio(idDuenio);
-        MascoDueDTO mascoDue = new MascoDueDTO();
-        mascoDue.setNombreMascota(due.getMasco().getNombre());
-        mascoDue.setEspecieMascota(due.getMasco().getEspecie());
-        mascoDue.setRazaMascota(due.getMasco().getRaza());
-        mascoDue.setNombreDuenio(due.getNombre());
-        mascoDue.setApellidoDuenio(due.getApellido());
+    public List<MascoDueDTO> listaMascoDueDTO() {
+        List<Duenio> listaDuenios = this.getDuenios();
+        List<MascoDueDTO> listaMascoDue = new ArrayList<>();
 
-        return mascoDue;
+        MascoDueDTO mascoDue = new MascoDueDTO();
+        for(Duenio due:listaDuenios) {
+            mascoDue.setNombreMascota(due.getMasco().getNombre());
+            mascoDue.setEspecieMascota(due.getMasco().getEspecie());
+            mascoDue.setRazaMascota(due.getMasco().getRaza());
+            mascoDue.setNombreDuenio(due.getNombre());
+            mascoDue.setApellidoDuenio(due.getApellido());
+
+            listaMascoDue.add(mascoDue);
+            mascoDue = new MascoDueDTO();
+        }
+        return listaMascoDue;
     }
 }
