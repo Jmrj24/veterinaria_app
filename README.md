@@ -47,9 +47,9 @@ El desarrollo implementa el patrón **DTO** para estructurar y enviar las respue
 ---
 
 ## 📂 Estructura del Proyecto
-**Mascota:**
-- Modelo con atributos: id, nombre, especie, raza, color.
-**Dueño:**
-- Modelo con atributos: id, dni, nombre, apellido, celular.
-**DTO:**
-- Implementación del patrón DTO para la respuesta combinada.
+- **Mascota:**
+  - Modelo con atributos: id, nombre, especie, raza, color.
+- **Dueño:**
+  - Modelo con atributos: id, dni, nombre, apellido, celular.
+- **DTO:**
+  - Implementación del patrón DTO para la respuesta combinada.
