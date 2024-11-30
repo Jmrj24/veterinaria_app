@@ -26,7 +26,7 @@ El desarrollo implementa el patrón **DTO** para estructurar y enviar las respue
 - **Java** ☕  
 - **Spring Boot** 🌱  
 - **MySQL** 🐬  
-- **Maven** 🧰  
+- **Maven** 🪶  
 
 ---
 
